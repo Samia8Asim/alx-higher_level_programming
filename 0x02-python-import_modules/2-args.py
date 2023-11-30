@@ -1,0 +1,12 @@
+#!/usr/bin/python3
+import sys
+
+arg_list = sys.argv[1:]
+arg_len = len(arg_list)
+
+if arg_len == 0:
+    print("{} arguments.".format(arg_len))
+elif arg_len >= 1:
+    print("{} arguments:".format(arg_len))
+    for i in range(arg_len):
+        print("{}: {}".format(i + 1, arg_list[i]))
