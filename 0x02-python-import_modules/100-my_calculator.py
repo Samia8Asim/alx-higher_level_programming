@@ -10,7 +10,6 @@ if __name__ == "__main__":
 
     num1 = int(sys.argv[1])
     num2 = int(sys.argv[3])
-    
     if sys.argv[2] == '+':
         print("{} + {} = {}".format(num1, num2, num1 + num2))
         exit(0)
