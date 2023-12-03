@@ -3,7 +3,7 @@
 def no_c(my_string):
     copy = ""
 
-    for ch in range(len(my_string)):
-        if (my_string[ch] != "c" and my_string[ch] != "C"):
-            copy += my_string[ch]
+    for ch in my_string:
+        if (ch != "c" and ch != "C"):
+            copy += ch
     return copy
