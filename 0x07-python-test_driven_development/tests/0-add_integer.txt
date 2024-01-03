@@ -1,0 +1,113 @@
+The ``0-add_integer`` module
+============================
+
+Using ``add_integer``
+---------------------
+
+Import function from module:
+
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+Test with one int argument:
+
+    >>> add_integer(1)
+    99
+
+Test use one int argument to check default second:
+
+    >>> add_integer(0)
+    98
+
+Test float:
+
+    >>> add_integer(144.9)
+    242
+
+Test negative float:
+
+    >>> add_integer(-5.5)
+    93
+
+Test two int:
+
+    >>> add_integer(11, 6)
+    17
+
+Test two long int:
+
+    >>> add_integer(99999999998, 999999999997)
+    1099999999995
+
+Test positive, negative int:
+
+    >>> add_integer(34, -892)
+    -858
+
+Test negative, positive int:
+
+    >>> add_integer(-78, 54)
+    -24
+
+Test an int with a float:
+
+    >>> add_integer(115, 25.8)
+    140
+
+Test float with an int:
+
+    >>> add_integer(2536.6, 2839)
+    5375
+
+Test two floats:
+
+    >>> add_integer(8.4, 3.8)
+    11
+
+Add infinity:
+
+    >>> add_integer(float('inf'), float('-inf'))
+    Traceback (most recent call last):
+    ...
+    OverflowError: cannot convert float infinity to integer
+
+Add nan:
+
+    >>> add_integer(0, float('nan'))
+    Traceback (most recent call last):
+    ...
+    ValueError: cannot convert float NaN to integer
+
+Test first arg invalid:
+
+    >>> add_integer("sam", 0)
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+Test second arg invalid:
+
+    >>> add_integer(14, [])
+    Traceback (most recent call last):
+        ...
+    TypeError: b must be an integer
+
+Test both args invalid:
+
+    >>> add_integer(None, None)
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+Test two strings:
+
+    >>> add_integer("sam", "tech")
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+Test float overflow:
+    >>> add_integer(float('inf'), 0)
+    Traceback (most recent call last):
+    ...
+    OverflowError: cannot convert float infinity to integer
+    
