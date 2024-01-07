@@ -1,4 +1,4 @@
-ay_my_name`` module
+say_my_name`` module
 ============================
 
 Using ``3-say_my_name``
@@ -13,11 +13,11 @@ Test basic:
 
 Test first name:
 	>>> say_my_name("samia")
-	My name is samia
+	My name is samia 
 
 Test last name empty:
 	>>> say_my_name("sam", "")
-	My name is sam
+	My name is sam 
 
 Test both empty:
 	>>> say_my_name("", "")
