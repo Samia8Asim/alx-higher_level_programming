@@ -7,11 +7,6 @@ def load_from_json_file(filename):
     Args:
         filename: name of file
     """
-    import os
     import json
-    if os.path.exists(filename):
-        with open(filename, encoding='utf-8') as fj:
-            obj = json.load(fj)
-            return obj
-    else:
-        return None
+    with open(filename, encoding='utf-8') as fj:
+        return json.load(fj)

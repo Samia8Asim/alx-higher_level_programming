@@ -8,4 +8,4 @@ def read_file(filename=""):
         filename: name of file
     """
     with open(filename, encoding='utf-8') as fh:
-        print(fh.read())
+        print(fh.read(), end="")

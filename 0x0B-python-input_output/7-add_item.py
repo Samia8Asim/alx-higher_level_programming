@@ -2,12 +2,11 @@
 import sys
 save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
 load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
+argl = list(sys.argv[1:])
 
-def add_items_and_save(arg):
-    ex_items = load_from_json_file("add_item.json") or []
-    ex_items.extend(arg)
-    save_to_json_file(ex_items, "add_item.json")
-
-
-if __name__ == "__main__":
-    add_items_and_save(sys.argv[1:])
+try:
+    ex_items = load_from_json_file("add_item.json")
+except Exception:
+    ex_items = []
+ex_items.extend(argl)
+save_to_json_file(ex_items, "add_item.json")
