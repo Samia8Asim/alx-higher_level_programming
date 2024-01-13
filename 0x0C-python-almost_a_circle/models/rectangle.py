@@ -60,4 +60,12 @@ class Rectangle(Base):
             raise ValueError("{} must be >= 0.".format(name))
 
     def area(self):
-        return self.width * self.hight
+        return self.width * self.height
+
+    def display(self):
+        for _ in range(self.height):
+            print('#' * self.width)
+
+    def __str__(self):
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(
+                self.id, self.x, self.y, self.width, self.height)
