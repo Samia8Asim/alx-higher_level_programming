@@ -6,11 +6,7 @@ if (process.argv.length < 3) {
 } else if (process.argv.length < 4) {
   console.log(0);
 } else {
-  let bigNum = parseInt(process.argv[2]);
-  for (let i = 2; i < process.argv.length; i++) {
-    if (parseInt(process.argv[i]) > bigNum) {
-      bigNum = parseInt(process.argv[i]);
-    }
-  }
-  console.log(bigNum);
+  const numbers = process.argv.slice(2).map(Number);
+  numbers.sort((a, b) => b - a);
+  console.log(numbers[1]);
 }
