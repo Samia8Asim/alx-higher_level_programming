@@ -1,3 +1,6 @@
+#!/usr/bin/node
+//function that executes x times a function.
+
 function callMeMoby (x, theFunction) {
   if (x > 0) {
     theFunction();
