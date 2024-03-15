@@ -17,9 +17,10 @@ if __name__ == "__main__":
                 ORDER BY cities.id ASC", [argv[4]])
 
     states = cur.fetchall()
-
+    i = []
     for state in states:
-        print(state)
+        i.append(i[1])
+        print(", ".join(i))
 
     cur.close()
     conn.close()
