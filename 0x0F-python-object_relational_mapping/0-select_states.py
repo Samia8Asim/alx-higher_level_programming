@@ -1,0 +1,23 @@
+#!/usr/bin/python3
+import MySQLdb
+from sys import argv
+"""
+A script that lists all states from the database hbtn_0e_0_usa.
+"""
+
+conn = MySQLdb.connect(host="localhost", port=3307, user=argv[1]
+                       passwd=argv[2], db=argv[3], charset="utf8")
+cur = conn.cursor()
+cur.execute("SELECT * FROM states ORDER BY states.id ASC")
+
+states = cur.fetchall()
+
+for state in states:
+    print(state)
+
+cur.close()
+conn.close()
+
+if __name__ == "__main__":
+    if len(sys.argv) == 4:
+        list_states(sys.argv[1], sys.argv[2], sys.argv[3])
