@@ -5,9 +5,6 @@ from sqlalchemy import Column, Integer, String, ForeignKey
 from model_state import Base
 
 
-Base = declarative_base()
-
-
 class City(Base):
     """city table class"""
     __tablename__ = 'cities'
