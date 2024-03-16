@@ -18,8 +18,8 @@ if __name__ == "__main__":
     session = Session()
 
     states = session.query(State).filter(State.name == argv[4]).first()
-    if states:
+    try:
         print("{}".format(state.id))
-    else:
+    except IndexError:
         print("Not found")
     session.close()
