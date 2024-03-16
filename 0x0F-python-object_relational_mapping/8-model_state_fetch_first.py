@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-"""script that lists first State objects from the database hbtn_0e_6_usa
 """
-
+script that lists first State objects from the database hbtn_0e_6_usa
+"""
 from sys import argv
 from model_state import Base, State
 from sqlalchemy import (create_engine)
@@ -13,11 +13,11 @@ if __name__ == "__main__":
                            .format(argv[1], argv[2], argv[3]),
                            pool_pre_ping=True)
 
+    Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    Base.metadata.create_all(engine)
 
-    states = session.query(State).order_by(State.id).first()
+    states = session.query(State).first()
     if states:
         print("{}: {}".format(state.id, state.name))
     else:
