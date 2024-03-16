@@ -9,17 +9,16 @@ from sqlalchemy.orm import sessionmaker
 
 
 if __name__ == "__main__":
-    username = argv[1]
-    password = argv[2]
-    dbname = argv[3]
-
+    # create engine
     eng = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
-                        .format(username, password, db_name),
+                        .format(argv[1], argv[2], argv[3]),
                         pool_pre_ping=True)
 
+    # create cofig Session class
     Session = sessionmaker(bind=engine)
     session = Session()
     Base.metadata.create_all(engine)
+
     states = session.query(State).order_by(State.id).all()
     for state in states:
         print("{}: {}".format(state.id, state.name))
